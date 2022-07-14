@@ -1,0 +1,1 @@
+from LpImagesDownloader import down_all

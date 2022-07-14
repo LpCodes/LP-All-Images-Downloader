@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="LPImagesDownloader",
+    name="LpImagesDownloader",
     version="0.0.1",
     author="Lpcodes",
     description="A package for downloading all the Images from the URL provided",
