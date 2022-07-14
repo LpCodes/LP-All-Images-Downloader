@@ -1,0 +1,4 @@
+requests
+selenium
+validators
+webdriver_manager

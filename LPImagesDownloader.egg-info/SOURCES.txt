@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+LP Images Downloader/__init__.py
+LP Images Downloader/lid.py
+LPImagesDownloader.egg-info/PKG-INFO
+LPImagesDownloader.egg-info/SOURCES.txt
+LPImagesDownloader.egg-info/dependency_links.txt
+LPImagesDownloader.egg-info/requires.txt
+LPImagesDownloader.egg-info/top_level.txt
