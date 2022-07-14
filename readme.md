@@ -1,9 +1,10 @@
-![PyPI - Downloads](https://img.shields.io/pypi/dm/IndianPinCodes?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/LpCodes/Pincode-Details?style=for-the-badge)    ![PyPI](https://img.shields.io/pypi/v/IndianPinCodes?style=for-the-badge)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/LP-All-Images-Downloader?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/LpCodes/LP-All-Images-Downloader?style=for-the-badge)    ![PyPI](https://img.shields.io/pypi/v/IndianPinCodes?style=for-the-badge)
 
+![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=https://github.com/LpCodes/LP-All-Images-Downloader)
 
-# Indian Postal PIN Code Details
+# LP Images Downloader
 
-A simple package to fetch Indian PINCODE Details
+A simple package to download all Images from the url provided
 
 
 ## Installation
