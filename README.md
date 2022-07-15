@@ -1,4 +1,5 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/LpCodes/LP-All-Images-Downloader?style=for-the-badge)    ![PyPI](https://img.shields.io/pypi/v/LpImagesDownloader?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/LpCodes/LP-All-Images-Downloader?style=for-the-badge)    ![PyPI](https://img.shields.io/pypi/v/LpImagesDownloader?style=for-the-badge)![PyPI - Downloads](https://img.shields.io/pypi/dm/LpImagesDownloader?style=for-the-badge)
+![PyPI - License](https://img.shields.io/pypi/l/LpImagesDownloader?style=for-the-badge)!![PyPI - Wheel](https://img.shields.io/pypi/wheel/LpImagesDownloader?style=for-the-badge)
 
 ![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=https://github.com/LpCodes/LP-All-Images-Downloader)
 
