@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: LpImagesDownloader
-Version: 0.0.2
+Version: 0.0.3
 Summary: A package for downloading all the Images from the URL provided
 Home-page: https://github.com/LpCodes/LP-All-Images-Downloader
 Author: Lpcodes
@@ -11,7 +11,8 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 
-![GitHub last commit](https://img.shields.io/github/last-commit/LpCodes/LP-All-Images-Downloader?style=for-the-badge)    ![PyPI](https://img.shields.io/pypi/v/LpImagesDownloader?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/LpCodes/LP-All-Images-Downloader?style=for-the-badge)    ![PyPI](https://img.shields.io/pypi/v/LpImagesDownloader?style=for-the-badge)![PyPI - Downloads](https://img.shields.io/pypi/dm/LpImagesDownloader?style=for-the-badge)
+![PyPI - License](https://img.shields.io/pypi/l/LpImagesDownloader?style=for-the-badge)!![PyPI - Wheel](https://img.shields.io/pypi/wheel/LpImagesDownloader?style=for-the-badge)
 
 ![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=https://github.com/LpCodes/LP-All-Images-Downloader)
 
