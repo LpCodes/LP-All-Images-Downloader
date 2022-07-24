@@ -1,6 +1,4 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/LpCodes/LP-All-Images-Downloader?style=for-the-badge)    ![PyPI](https://img.shields.io/pypi/v/LpImagesDownloader?style=for-the-badge)
-![PyPI - License](https://img.shields.io/pypi/l/LpImagesDownloader?style=for-the-badge)!![PyPI - Wheel](https://img.shields.io/pypi/wheel/LpImagesDownloader?style=for-the-badge)
-[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=total&units=international_system&left_color=black&right_color=green&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
+![PyPI](https://img.shields.io/pypi/v/lpimagesdownloader)[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=month&units=none&left_color=blue&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
 
 # LP Images Downloader
 
@@ -59,3 +57,4 @@ You can view the saved Images at Saved Images/India Wikipedia
 ## Contributing
 
 Contributions are always welcome!
+
