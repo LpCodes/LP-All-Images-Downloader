@@ -1,10 +1,11 @@
 Metadata-Version: 2.1
 Name: LpImagesDownloader
-Version: 0.0.6
+Version: 0.0.7
 Summary: A package for downloading all the Images from the URL provided
 Home-page: https://github.com/LpCodes/LP-All-Images-Downloader
 Author: Lpcodes
 Project-URL: Bug Tracker, https://github.com/LpCodes/LP-All-Images-Downloader/issues
+Keywords: Images Image download automation auto webscrapping
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent

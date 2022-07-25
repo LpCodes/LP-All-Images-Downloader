@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="LpImagesDownloader",
-    version="0.0.6",
+    version="0.0.7",
     author="Lpcodes",
     description="A package for downloading all the Images from the URL provided",
     long_description=long_description,
@@ -21,5 +21,6 @@ setup(
         "Operating System :: OS Independent",
     ],
     packages=find_packages(),
+    keywords='Images Image download automation auto webscrapping',
     install_requires=['requests','selenium','validators','webdriver_manager'],
     python_requires=">=3.6",)
