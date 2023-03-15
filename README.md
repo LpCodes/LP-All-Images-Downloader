@@ -1,5 +1,5 @@
 ![PyPI](https://img.shields.io/pypi/v/lpimagesdownloader)
-[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
+[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader) [![Publish Package](https://github.com/LpCodes/LP-All-Images-Downloader/actions/workflows/python-publish.yml/badge.svg)](https://github.com/LpCodes/LP-All-Images-Downloader/actions/workflows/python-publish.yml)
 
 # LP Images Downloader
 
