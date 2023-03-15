@@ -1,4 +1,5 @@
-![PyPI](https://img.shields.io/pypi/v/lpimagesdownloader)[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=month&units=none&left_color=blue&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
+![PyPI](https://img.shields.io/pypi/v/lpimagesdownloader)
+[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
 
 # LP Images Downloader
 
@@ -15,9 +16,9 @@ pip install LpImagesDownloader
 ## Usage/Examples
 
 ```
-from LpImagesDownloader import down_all
+from LpImagesDownloader import download_images
 
-down_all("https://en.wikipedia.org/wiki/India", 3)
+download_images("https://en.wikipedia.org/wiki/India", 3)
 
 Setting Up Environment ... 
 
@@ -56,5 +57,7 @@ You can view the saved Images at Saved Images/India Wikipedia
 
 ## Contributing
 
-Contributions are always welcome!
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
 

@@ -6,11 +6,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="LpImagesDownloader",
-    version="0.0.7",
+    version="0.0.8",
     author="Lpcodes",
     description="A package for downloading all the Images from the URL provided",
-    long_description=long_description,
     long_description_content_type="text/markdown",
+    long_description=long_description,
     url="https://github.com/LpCodes/LP-All-Images-Downloader",
     project_urls={
         "Bug Tracker": "https://github.com/LpCodes/LP-All-Images-Downloader/issues",
@@ -21,6 +21,11 @@ setup(
         "Operating System :: OS Independent",
     ],
     packages=find_packages(),
-    keywords='Images Image download automation auto webscrapping',
-    install_requires=['requests','selenium','validators','webdriver_manager'],
+    keywords='Images Image download automation auto webscrapping web selenium',
+    install_requires=[
+        'requests',
+        'validators',
+        'selenium',
+        'webdriver_manager',
+    ],
     python_requires=">=3.6",)
