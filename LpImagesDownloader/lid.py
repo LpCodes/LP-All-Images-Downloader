@@ -14,10 +14,12 @@ def setup_driver(headless=True):
     Set up and return a Selenium webdriver instance.
     """
     options = Options()
-    options.headless = True
+    options.headless = headless
     # options.add_argument("--window-size=1920,1200")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument('--disable-gpu')
+    options.add_argument('--no-sandbox')
 
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
@@ -46,7 +48,7 @@ def download_images(pageurl, nooftimesyouwanttoscroll):
         source = pageurl
         print("Running operations in the background. You will get the results shortly...")
         driver.get(source)
-        driver.maximize_window()
+        driver.minimize_window()
 
         for i in range(nooftimesyouwanttoscroll):
             print(f"Scrolling page {i + 1}...")
