@@ -99,6 +99,7 @@ def download_images(pageurl, nooftimesyouwanttoscroll):
         print("An error occurred:", e)
 
     finally:
+        driver.close()
         driver.quit()
 
 # Example usage:
