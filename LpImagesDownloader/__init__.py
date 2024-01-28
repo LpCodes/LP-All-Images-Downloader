@@ -1,1 +1,1 @@
-from .lid import down_all
+from .lid import download_images
