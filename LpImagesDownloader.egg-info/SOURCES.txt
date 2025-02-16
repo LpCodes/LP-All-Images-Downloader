@@ -6,5 +6,6 @@ LpImagesDownloader/lid.py
 LpImagesDownloader.egg-info/PKG-INFO
 LpImagesDownloader.egg-info/SOURCES.txt
 LpImagesDownloader.egg-info/dependency_links.txt
+LpImagesDownloader.egg-info/entry_points.txt
 LpImagesDownloader.egg-info/requires.txt
 LpImagesDownloader.egg-info/top_level.txt

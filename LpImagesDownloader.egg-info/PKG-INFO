@@ -1,74 +1,124 @@
 Metadata-Version: 2.1
 Name: LpImagesDownloader
-Version: 0.0.7
-Summary: A package for downloading all the Images from the URL provided
+Version: 1.0.0
+Summary: A Python package to automate image downloading from a given URL.
 Home-page: https://github.com/LpCodes/LP-All-Images-Downloader
 Author: Lpcodes
+Author-email: lovelesh_p@zohomail.in
 Project-URL: Bug Tracker, https://github.com/LpCodes/LP-All-Images-Downloader/issues
-Keywords: Images Image download automation auto webscrapping
+Project-URL: Source Code, https://github.com/LpCodes/LP-All-Images-Downloader
+Keywords: image,download,automation,web scraping,selenium,webdriver_manager
+Classifier: Development Status :: 5 - Production/Stable
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.6
+Requires-Python: >=3.7
 Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.26.0
+Requires-Dist: validators>=0.18.2
+Requires-Dist: selenium>=4.0.0
+Requires-Dist: webdriver_manager>=3.5.0
 
-![PyPI](https://img.shields.io/pypi/v/lpimagesdownloader)[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=month&units=none&left_color=blue&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
+
+![PyPI](https://img.shields.io/pypi/v/lpimagesdownloader)
+[![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
+[![Publish Package](https://github.com/LpCodes/LP-All-Images-Downloader/actions/workflows/python-publish.yml/badge.svg)](https://github.com/LpCodes/LP-All-Images-Downloader/actions/workflows/python-publish.yml)
 
 # LP Images Downloader
 
-A simple package to download all Images from the url provided
+A Python package to effortlessly download all images from a given URL. Automate image scraping and save them locally in just a few lines of code.
 
+---
 
-## Installation
+## 📦 Installation
+
+Install the package from PyPI using pip:
 
 ```bash
 pip install LpImagesDownloader
 ```
-    
-    
-## Usage/Examples
 
-```
-from LpImagesDownloader import down_all
+---
 
-down_all("https://en.wikipedia.org/wiki/India", 3)
+## 🚀 Usage/Examples
 
-Setting Up Environment ... 
+Here’s how you can use the package to download images:
 
-Running Operations in background you will get the results shortly ... 
-Scrolling page
-Scrolling Page 0
-Scrolling Page 1
-Scrolling Page 2
-Total detected images on page 176
-Downloading 1.jpg
-Downloading 2.jpg
-Downloading 3.jpg
-Downloading 4.jpg
-Downloading 5.jpg
-Downloading 6.jpg
-Downloading 7.jpg
-Downloading 8.jpg
-Downloading 9.jpg
-Downloading 10.jpg
-........................
+### Basic Example
 
-Total detected images on page 176
-Total Images Downloaded 176
-You can view the saved Images at Saved Images/India Wikipedia
+```python
+from LpImagesDownloader import download_images
 
+# Download images from a webpage, scrolling 3 times to load dynamic content
+download_images("https://en.wikipedia.org/wiki/India", 3)
 ```
 
-## Authors
+### Sample Output
 
-[@LpCodes](https://github.com/LpCodes)
+```
+Setting Up Environment...
 
+Running Operations in the background. You will get the results shortly...
+Scrolling Page 1...
+Scrolling Page 2...
+Scrolling Page 3...
 
-## License
+Total detected images on page: 176
+Downloading 1.jpg...
+Downloading 2.jpg...
+...
+Total Images Downloaded: 176
+You can view the saved images at: Saved Images/India Wikipedia
+```
 
-[MIT](https://choosealicense.com/licenses/mit/)
+---
 
-## Contributing
+## 🛠️ Features
 
-Contributions are always welcome!
+- **Dynamic Content Handling**: Automatically scrolls through pages to load dynamic images.
+- **URL Validation**: Ensures all images are valid before downloading.
+- **Customizable Save Locations**: Automatically organizes downloaded images into folders based on page titles.
+
+---
+
+## 🧑‍💻 Author
+
+Created and maintained by [@LpCodes](https://github.com/LpCodes).
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it as needed.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can contribute:
+
+### Steps to Contribute
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`.
+3. Make your changes and commit them: `git commit -m 'Add feature-name'`.
+4. Push to your branch: `git push origin feature-name`.
+5. Open a pull request and describe your changes.
+
+---
+
+## 🌟 Feedback & Suggestions
+
+Have ideas to improve the package or documentation? Open an issue on the [GitHub repository](https://github.com/LpCodes/LP-All-Images-Downloader/issues).
+
+---
+
+## 📝 Additional Resources
+
+- **Bug Tracker**: [Report Issues](https://github.com/LpCodes/LP-All-Images-Downloader/issues)
+- **Source Code**: [GitHub Repository](https://github.com/LpCodes/LP-All-Images-Downloader)
+
+---
+
+Thank you for using LP Images Downloader! Your feedback helps make this project better. 😊
+
 

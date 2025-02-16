@@ -1,4 +1,4 @@
-requests
-selenium
-validators
-webdriver_manager
+requests>=2.26.0
+validators>=0.18.2
+selenium>=4.0.0
+webdriver_manager>=3.5.0
