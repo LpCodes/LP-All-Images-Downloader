@@ -1,24 +1,25 @@
 Metadata-Version: 2.1
 Name: LpImagesDownloader
-Version: 1.0.0
-Summary: A Python package to automate image downloading from a given URL.
+Version: 1.1.0
+Summary: A powerful Python package to automate image downloading from any webpage with robust error handling and detailed logging.
 Home-page: https://github.com/LpCodes/LP-All-Images-Downloader
 Author: Lpcodes
 Author-email: lovelesh_p@zohomail.in
-Project-URL: Bug Tracker, https://github.com/LpCodes/LP-All-Images-Downloader/issues
-Project-URL: Source Code, https://github.com/LpCodes/LP-All-Images-Downloader
-Keywords: image,download,automation,web scraping,selenium,webdriver_manager
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
-Requires-Dist: requests>=2.26.0
-Requires-Dist: validators>=0.18.2
-Requires-Dist: selenium>=4.0.0
-Requires-Dist: webdriver_manager>=3.5.0
-
+Requires-Dist: requests<3.0.0,>=2.28.2
+Requires-Dist: selenium<5.0.0,>=4.8.2
+Requires-Dist: validators<0.21.0,>=0.20.0
+Requires-Dist: webdriver_manager<4.0.0,>=3.8.5
 
 ![PyPI](https://img.shields.io/pypi/v/lpimagesdownloader)
 [![Downloads](https://static.pepy.tech/personalized-badge/lpimagesdownloader?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/lpimagesdownloader)
@@ -26,9 +27,18 @@ Requires-Dist: webdriver_manager>=3.5.0
 
 # LP Images Downloader
 
-A Python package to effortlessly download all images from a given URL. Automate image scraping and save them locally in just a few lines of code.
+A powerful Python package to effortlessly download all images from any webpage. Built with Selenium and modern Python practices, this tool automates image scraping with robust error handling and detailed logging.
 
----
+## ✨ Features
+
+- **Dynamic Content Handling**: Automatically scrolls through pages to load dynamic images
+- **Robust Error Handling**: Comprehensive error catching and logging
+- **URL Validation**: Ensures all images are valid before downloading
+- **Customizable Save Locations**: Organizes downloaded images into folders based on page titles
+- **Detailed Logging**: Provides comprehensive logging of all operations
+- **Type Safety**: Full type hints for better code reliability
+- **Resource Management**: Proper cleanup of browser resources
+- **Progress Tracking**: Returns list of successfully downloaded files
 
 ## 📦 Installation
 
@@ -38,84 +48,133 @@ Install the package from PyPI using pip:
 pip install LpImagesDownloader
 ```
 
----
+### Requirements
+- Python 3.7+
+- Chrome browser installed
+- Internet connection
 
 ## 🚀 Usage/Examples
 
-Here’s how you can use the package to download images:
-
-### Basic Example
+### Basic Usage
 
 ```python
 from LpImagesDownloader import download_images
 
 # Download images from a webpage, scrolling 3 times to load dynamic content
-download_images("https://en.wikipedia.org/wiki/India", 3)
+downloaded_files = download_images("https://en.wikipedia.org/wiki/India", 3)
+print(f"Successfully downloaded {len(downloaded_files)} images")
+```
+
+### Advanced Usage with Error Handling
+
+```python
+from LpImagesDownloader import download_images
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+try:
+    # Download images with custom scroll count
+    downloaded_files = download_images("https://example.com", 5)
+    print(f"Successfully downloaded {len(downloaded_files)} images")
+    
+    # Process downloaded files
+    for file_path in downloaded_files:
+        print(f"Downloaded: {file_path}")
+        
+except Exception as e:
+    logging.error(f"Failed to download images: {e}")
 ```
 
 ### Sample Output
 
 ```
-Setting Up Environment...
-
-Running Operations in the background. You will get the results shortly...
-Scrolling Page 1...
-Scrolling Page 2...
-Scrolling Page 3...
-
-Total detected images on page: 176
-Downloading 1.jpg...
-Downloading 2.jpg...
+2024-03-14 10:30:15 - INFO - Setting up environment...
+2024-03-14 10:30:16 - INFO - Loading URL: https://example.com
+2024-03-14 10:30:17 - INFO - Running operations in the background...
+2024-03-14 10:30:18 - INFO - Scrolling page 1...
+2024-03-14 10:30:20 - INFO - Scrolling page 2...
+2024-03-14 10:30:22 - INFO - Scrolling page 3...
+2024-03-14 10:30:23 - INFO - Total detected images on page: 25
+2024-03-14 10:30:24 - INFO - Downloading 1.jpg...
+2024-03-14 10:30:25 - INFO - Downloading 2.jpg...
 ...
-Total Images Downloaded: 176
-You can view the saved images at: Saved Images/India Wikipedia
+2024-03-14 10:30:35 - INFO - Total images downloaded: 25
+2024-03-14 10:30:35 - INFO - You can view the saved images at: /path/to/Saved Images/Example
 ```
 
----
+## 🔧 Configuration
 
-## 🛠️ Features
+The package uses sensible defaults but can be customized:
 
-- **Dynamic Content Handling**: Automatically scrolls through pages to load dynamic images.
-- **URL Validation**: Ensures all images are valid before downloading.
-- **Customizable Save Locations**: Automatically organizes downloaded images into folders based on page titles.
+- **Headless Mode**: Browser runs in headless mode by default
+- **Timeout**: Default page load timeout is 30 seconds
+- **Save Location**: Images are saved in a "Saved Images" directory with subdirectories based on page titles
 
----
+## 🛠️ Development
+
+### Setting up Development Environment
+
+1. Clone the repository:
+```bash
+git clone https://github.com/LpCodes/LP-All-Images-Downloader.git
+cd LP-All-Images-Downloader
+```
+
+2. Install development dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run tests:
+```bash
+python -m pytest
+```
 
 ## 🧑‍💻 Author
 
 Created and maintained by [@LpCodes](https://github.com/LpCodes).
 
----
-
 ## 📜 License
 
 This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it as needed.
-
----
 
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can contribute:
 
-### Steps to Contribute
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-name`.
-3. Make your changes and commit them: `git commit -m 'Add feature-name'`.
-4. Push to your branch: `git push origin feature-name`.
-5. Open a pull request and describe your changes.
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-name`
+3. Make your changes and commit them: `git commit -m 'Add feature-name'`
+4. Push to your branch: `git push origin feature-name`
+5. Open a pull request and describe your changes
 
----
+### Development Guidelines
+- Follow PEP 8 style guide
+- Add type hints to all functions
+- Include docstrings for all functions
+- Add tests for new features
+- Update documentation as needed
+
+## 🐛 Known Issues and Limitations
+
+- Some websites may block automated browsers
+- Very large pages may require more memory
+- Some dynamic content may not load properly
 
 ## 🌟 Feedback & Suggestions
 
 Have ideas to improve the package or documentation? Open an issue on the [GitHub repository](https://github.com/LpCodes/LP-All-Images-Downloader/issues).
 
----
-
 ## 📝 Additional Resources
 
 - **Bug Tracker**: [Report Issues](https://github.com/LpCodes/LP-All-Images-Downloader/issues)
 - **Source Code**: [GitHub Repository](https://github.com/LpCodes/LP-All-Images-Downloader)
+- **Documentation**: [Read the Docs](https://lpimagesdownloader.readthedocs.io/)
 
 ---
 

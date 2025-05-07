@@ -1,5 +1,14 @@
-requests==2.28.2
-selenium==4.8.2
-setuptools==67.3.2
-validators==0.20.0
-webdriver_manager==3.8.5
+# Core dependencies
+requests>=2.28.2,<3.0.0
+selenium>=4.8.2,<5.0.0
+validators>=0.20.0,<0.21.0
+webdriver_manager>=3.8.5,<4.0.0
+setuptools>=67.3.2,<68.0.0
+
+# Development dependencies
+pytest>=7.0.0,<8.0.0  # For testing
+black>=22.0.0,<23.0.0  # For code formatting
+isort>=5.0.0,<6.0.0  # For import sorting
+mypy>=1.0.0,<2.0.0  # For type checking
+flake8>=6.0.0,<7.0.0  # For linting
+pytest-cov>=4.0.0,<5.0.0  # For test coverage

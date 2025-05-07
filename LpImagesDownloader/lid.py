@@ -3,14 +3,20 @@ import re
 import logging
 import requests
 import validators
-from typing import Optional
+from typing import Optional, List
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException, NoSuchElementException
+from selenium.common.exceptions import WebDriverException, NoSuchElementException, TimeoutException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 def setup_driver(headless: bool = True, timeout: int = 30) -> webdriver.Chrome:
     """
@@ -70,9 +76,20 @@ def download_image(url: str, save_path: str) -> bool:
     return False
 
 
-def download_images(pageurl, nooftimesyouwanttoscroll):
+def download_images(pageurl: str, nooftimesyouwanttoscroll: int) -> List[str]:
     """
     Downloads all the images from the URL provided.
+    
+    Args:
+        pageurl (str): The URL of the page to download images from
+        nooftimesyouwanttoscroll (int): Number of times to scroll the page
+        
+    Returns:
+        List[str]: List of paths to downloaded images
+        
+    Raises:
+        TypeError: If pageurl is not a string or nooftimesyouwanttoscroll is not an integer
+        ValueError: If the URL is invalid
     """
     if not isinstance(pageurl, str):
         raise TypeError("URL should be a string.")
@@ -83,24 +100,24 @@ def download_images(pageurl, nooftimesyouwanttoscroll):
     if not validators.url(pageurl):
         raise ValueError("Invalid URL.")
 
-    savloc = ''
-    print("Setting up environment...")
+    downloaded_files = []
+    logger.info("Setting up environment...")
     driver = setup_driver()
 
     try:
         source = pageurl
-        print(f"Loading URL: {source}")
+        logger.info(f"Loading URL: {source}")
         driver.get(source)
-        print("Running operations in the background. You will get the results shortly...")
+        logger.info("Running operations in the background. You will get the results shortly...")
         driver.minimize_window()
 
         for i in range(nooftimesyouwanttoscroll):
-            print(f"Scrolling page {i + 1}...")
+            logger.info(f"Scrolling page {i + 1}...")
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             driver.implicitly_wait(2)
 
         all_images = driver.find_elements(By.XPATH, "//img")
-        print(f"Total detected images on page: {len(all_images)}")
+        logger.info(f"Total detected images on page: {len(all_images)}")
 
         title = re.sub(r"[^\w\s-]", "", driver.title).strip()
         title = " ".join(title.split())
@@ -114,45 +131,46 @@ def download_images(pageurl, nooftimesyouwanttoscroll):
             url = img_element.get_attribute("src")
             
             if not validators.url(url):
-                print("Invalid URL:", url)
+                logger.warning(f"Invalid URL: {url}")
                 continue
 
             if url.endswith("Video_icon2017.png") or url.endswith(".svg"):
-                print("Skipping broken image detected:", url)
+                logger.info(f"Skipping non-image file: {url}")
                 continue
 
             filename = f"{valid_images}.jpg"
             savingpath = os.path.join(savloc, filename)
 
-            print(f"Downloading {filename} from {url}...")
-            try:
-                response = requests.get(url)
-                response.raise_for_status()
-                with open(savingpath, "wb") as f:
-                    f.write(response.content)
+            logger.info(f"Downloading {filename} from {url}...")
+            if download_image(url, savingpath):
+                downloaded_files.append(savingpath)
                 count += 1
-            except requests.exceptions.RequestException as e:
-                print(f"Failed to download {url}: {e}")
 
-        print(f"Total detected images on page: {valid_images}")
-        print(f"Total images downloaded: {count}")
-        print(f"You can view the saved images at {os.path.abspath(savloc)}.")
+        logger.info(f"Total detected images on page: {valid_images}")
+        logger.info(f"Total images downloaded: {count}")
+        logger.info(f"You can view the saved images at {os.path.abspath(savloc)}.")
+        return downloaded_files
 
+    except TimeoutException:
+        logger.error("Page load timed out. Please check your internet connection and try again.")
+        raise
     except NoSuchElementException as e:
-        print("Element not found:", e)
-
+        logger.error(f"Element not found: {e}")
+        raise
     except Exception as e:
-        print("An error occurred:", e)
-
+        logger.error(f"An unexpected error occurred: {e}")
+        raise
     finally:
-        driver.close()
-        driver.quit()
-
-   
-
-
+        try:
+            driver.close()
+            driver.quit()
+        except Exception as e:
+            logger.error(f"Error while closing driver: {e}")
 
 if __name__ == "__main__":
-    # Example usage
-    logging.basicConfig(level=logging.INFO)
-    download_images("https://example.com", scroll_count=3)
+    try:
+        # Example usage
+        downloaded_files = download_images("https://example.com", 3)
+        logger.info(f"Successfully downloaded {len(downloaded_files)} images")
+    except Exception as e:
+        logger.error(f"Failed to download images: {e}")

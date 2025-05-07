@@ -1,5 +1,4 @@
 README.md
-pyproject.toml
 setup.py
 LpImagesDownloader/__init__.py
 LpImagesDownloader/lid.py

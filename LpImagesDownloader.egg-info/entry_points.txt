@@ -1,2 +1,2 @@
 [console_scripts]
-lpimagesdownloader = image_downloader:download_images
+lpimagesdownloader = LpImagesDownloader.lid:download_images
